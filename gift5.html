@@ -17,53 +17,54 @@
 html,body{
     width:100%;
     height:100%;
-    overflow:hidden;
 }
 
 .heart5{
     width:100%;
-    height:100vh;
-    background:url("bg3.jpg") center center/cover no-repeat;
-background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("bg3.jpg") center center/cover no-repeat;
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg3.jpg") center center/cover no-repeat;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
-    padding:20px;
+    padding:15px;
+    gap: 12px; 
 }
 
 .img-box{
     width:min(90vw,500px);
-    height:min(78vh,700px);
+    
+    max-height: 75vh;
     border:4px solid #000;
     border-radius:12px;
     overflow:hidden;
+    flex-shrink: 0;
 }
 
 .img-box img{
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:auto;
+    max-height: 75vh; 
+    object-fit:contain; 
     display:block;
 }
 
-    .bottom-text{
+.bottom-text{
     font-family:'Cinzel', serif;
-    font-size:clamp(14px, 4vw, 28px); /* 18px se 14px kar diya, 40px se 28px */
+    font-size:clamp(14px, 3.2vw, 24px); 
     font-weight:600;
     color:#fffefe;
     text-align:center;
     text-transform:uppercase;
-    letter-spacing:1px; 
-    line-height:1.4;
+    letter-spacing:1px;
+    line-height:1.3;
     text-shadow:1px 1px 2px rgba(5, 5, 5, 0.5);
-    margin-bottom:10px;
-    padding: 0 15px; 
-    white-space: normal; 
-    word-wrap: break-word; 
-    }
+    padding: 0 10px;
+    max-width: 95%;
+    white-space: normal;
+}
 </style>
 </head>
 
