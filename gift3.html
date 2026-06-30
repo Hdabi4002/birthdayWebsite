@@ -14,8 +14,7 @@ body {
 
 .video-bg {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -31,25 +30,26 @@ body {
 .left {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .slider {
+  height: 100%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  animation: none;
-  position: relative;
+  align-items: center;
 }
 
 .slider-track {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  animation: scrollUp 10s linear infinite;
+
+  animation: scrollUp 8s linear infinite;
 }
+
 
 @keyframes scrollUp {
   0% {
@@ -68,58 +68,48 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-@keyframes moveUp {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(-100%); }
-}
-
 .right {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .right img {
-  width: 300px;
-  height: 500px;
+  width: min(450px, 90%);
+  height: min(650px, 85vh);
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-.message {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 0 5px 10px rgba(0,0,0,0.7);
-}
-
 @media (max-width: 768px) {
+
   .container {
     flex-direction: column;
   }
 
   .left {
     flex: 1;
+    height: 50vh;
   }
 
   .right {
     flex: 1;
+    height: 50vh;
+    padding-bottom: 15px; 
   }
 
   .slider img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
   }
 
   .right img {
-    width: 200px;
-    height: 250px;
+    width: 85%;
+    height: 90%;
+    object-fit: cover;
   }
 }
 </style>
@@ -133,44 +123,35 @@ body {
 
 <div class="container">
 
-<div class="left">
-  <div class="slider">
-    
-    <div class="slider-track">
-      <img src="CuteCouple1.jpg">
-      <img src="CuteCouple2.jpg">
-      <img src="CuteCouple3.jpg">
+  <div class="left">
+    <div class="slider">
+      <div class="slider-track">
 
-      <img src="CuteCouple1.jpg">
-      <img src="CuteCouple2.jpg">
-      <img src="CuteCouple3.jpg">
+        <img src="CuteCouple1.jpg">
+        <img src="CuteCouple2.jpg">
+        <img src="CuteCouple3.jpg">
+
+        <img src="CuteCouple1.jpg">
+        <img src="CuteCouple2.jpg">
+        <img src="CuteCouple3.jpg">
+
+        <img src="CuteCouple1.jpg">
+        <img src="CuteCouple2.jpg">
+        <img src="CuteCouple3.jpg">
+
+        <img src="CuteCouple1.jpg">
+        <img src="CuteCouple2.jpg">
+        <img src="CuteCouple3.jpg">
+
+      </div>
     </div>
-
   </div>
-</div>
 
   <div class="right">
     <img src="holdinghandswish.jpg">
   </div>
 
 </div>
-<script>
-window.addEventListener("load", () => {
-    // Smooth page fade-in
-    document.body.classList.add("loaded");
-
-    // Smooth image loading
-    document.querySelectorAll("img").forEach(img => {
-        if (img.complete) {
-            img.classList.add("loaded");
-        } else {
-            img.addEventListener("load", () => {
-                img.classList.add("loaded");
-            });
-        }
-    });
-});
-</script>
 
 </body>
 </html>
