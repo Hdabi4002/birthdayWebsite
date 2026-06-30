@@ -88,28 +88,31 @@ body {
 
   .container {
     flex-direction: column;
+    height: 100vh;
   }
 
   .left {
-    flex: 1;
-    height: 50vh;
+    height: 45vh;
   }
 
   .right {
-    flex: 1;
-    height: 50vh;
-    padding-bottom: 15px; 
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .right img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;   
+    border-radius: 15px;
   }
 
   .slider img {
-    width: 130px;
-    height: 130px;
-  }
-
-  .right img {
-    width: 85%;
-    height: 90%;
-    object-fit: cover;
+    width: 120px;
+    height: 120px;
   }
 }
 </style>
