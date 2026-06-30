@@ -9,14 +9,17 @@
 body {
   margin: 0;
   height: 100vh;
-  overflow: hidden;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
 }
 
+/* Hearts unchanged */
 .heart {
   position: absolute;
   top: -50px;
@@ -36,32 +39,39 @@ body {
   }
 }
 
+/* SMALL + CENTERED CARD */
 .card {
   z-index: 10;
-  width: 85%;
-  max-width: 500px;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
+
+  width: 78%;
+  max-width: 360px;   /* smaller card */
+  padding: 15px;
+
+  background: rgba(255,255,255,0.92);
   border-radius: 15px;
+
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  animation: fadeIn 1.5s ease;
+
+  animation: fadeIn 1.2s ease;
 }
 
+/* smoother small animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.7); }
+  from { opacity: 0; transform: scale(0.85); }
   to { opacity: 1; transform: scale(1); }
 }
 
 h2 {
   margin-top: 0;
   color: #ff4d6d;
+  font-size: 1.1rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 </style>
 </head>
