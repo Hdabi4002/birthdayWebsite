@@ -15,3 +15,19 @@ const timer = setInterval(() => {
 
   count--;
 }, 1000);
+
+window.addEventListener("load", () => {
+    // Smooth page fade-in
+    document.body.classList.add("loaded");
+
+    // Smooth image loading
+    document.querySelectorAll("img").forEach(img => {
+        if (img.complete) {
+            img.classList.add("loaded");
+        } else {
+            img.addEventListener("load", () => {
+                img.classList.add("loaded");
+            });
+        }
+    });
+});
