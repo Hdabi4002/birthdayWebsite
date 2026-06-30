@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Gift</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url("bday_cake.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 5px 10px rgba(0,0,0,0.7);
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+.info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.info span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.wave {
+  display: flex;
+  gap: 3px;
+}
+
+.wave div {
+  width: 4px;
+  height: 10px;
+  background: #ff4d6d;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.wave div:nth-child(2) { animation-delay: 0.2s; }
+.wave div:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.5); }
+}
+.fall-item {
+  position: fixed;
+  top: -50px;
+  font-size: 10px;
+  animation: fall linear infinite;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="happy-birthday-music-box.mp3" type="audio/mpeg">
+</audio>
+
+<div class="player">
+
+  <div class="info">
+    <strong>Birthday Song</strong>
+    <span>Playing for Siya 💖</span>
+  </div>
+
+  <div class="wave" id="wave" style="display:none;">
+    <div></div><div></div><div></div>
+  </div>
+
+  <button onclick="toggleMusic()" id="btn">▶</button>
+
+</div>
+
+<script>
+const music = document.getElementById("music");
+const btn = document.getElementById("btn");
+const wave = document.getElementById("wave");
+
+let playing = false;
+
+function toggleMusic() {
+  if (!playing) {
+    music.play();
+    btn.innerHTML = "⏸";
+    wave.style.display = "flex";
+  } else {
+    music.pause();
+    btn.innerHTML = "▶";
+    wave.style.display = "none";
+  }
+  playing = !playing;
+}
+function createFallingItems() {
+  const items = ["💗"];
+
+  for (let i = 0; i < 7; i++) {
+    let el = document.createElement("div");
+    el.classList.add("fall-item");
+
+    el.innerHTML = items[Math.floor(Math.random() * items.length)];
+
+    el.style.left = Math.random() * 100 + "vw";
+
+    let size = 12 + Math.random() * 18;
+    el.style.fontSize = size + "px";
+
+    el.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(el);
+
+    setTimeout(() => {
+      el.remove();
+    }, 8000);
+  }
+}
+
+createFallingItems();
+setInterval(createFallingItems, 2500);
+</script>
+
+</body>
+</html>

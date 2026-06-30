@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  padding: 25px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  opacity: 0;
+  transform: scale(0.4);
+  animation: popTitle 1.2s ease forwards;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@keyframes popTitle {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hearts {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.heart {
+  width: 85px;
+  height: 85px;
+  opacity: 0;
+  transform: translateY(60px) scale(0.3);
+  animation: popHeart 0.6s ease forwards;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.heart:active {
+  transform: scale(1.3);
+}
+
+@keyframes popHeart {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* STAGGER ANIMATION */
+.h1 { animation-delay: 0.9s; }
+.h2 { animation-delay: 1.1s; }
+.h3 { animation-delay: 1.3s; }
+.h4 { animation-delay: 1.5s; }
+.h5 { animation-delay: 1.7s; }
+
+.note {
+  margin-top: 35px;
+  font-size: 2rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .heart {
+    width: 70px;
+    height: 70px;
+  }
+
+  .note {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: none;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: scrollUp 10s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.slider img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+@keyframes moveUp {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right img {
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.message {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 5px 10px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 1;
+  }
+
+  .right {
+    flex: 1;
+  }
+
+  .slider img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .right img {
+    width: 200px;
+    height: 250px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<video class="video-bg" autoplay muted loop>
+  <source src="bg1.mp4" type="video/mp4">
+</video>
+
+<div class="container">
+
+<div class="left">
+  <div class="slider">
+    
+    <div class="slider-track">
+      <img src="CuteCouple1.jpg">
+      <img src="CuteCouple2.jpg">
+      <img src="CuteCouple3.jpg">
+
+      <img src="CuteCouple1.jpg">
+      <img src="CuteCouple2.jpg">
+      <img src="CuteCouple3.jpg">
+    </div>
+
+  </div>
+</div>
+
+  <div class="right">
+    <img src="holdinghandswish.jpg">
+  </div>
+
+</div>
+
+
+</body>
+</html>
