@@ -65,10 +65,10 @@ html,body{
     max-width: 95%;
     white-space: normal;
 }
-    .close-btn {
+   .close-btn {
     position: fixed;
-    top: max(15px, env(safe-area-inset-top));
-    right: max(15px, env(safe-area-inset-right));
+    top: 16px;
+    right: 16px;
 
     width: 45px;
     height: 45px;
@@ -76,12 +76,13 @@ html,body{
     border-radius: 50%;
     background: rgba(255,255,255,0.9);
     color: #ff4d6d;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 99999;
-    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .close-btn:hover {
