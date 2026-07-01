@@ -17,6 +17,7 @@ body {
   align-items: center;
 }
 
+/* CENTER SLIDER */
 .slider {
   width: 85%;
   max-width: 350px;
@@ -43,6 +44,7 @@ body {
   flex-shrink: 0;
 }
 
+/* FALLING IMAGES */
 .fall {
   position: absolute;
   top: -150px;
@@ -105,40 +107,34 @@ body {
     height: 100%;
   }
 }
-.close-btn{
-    position:absolute;
-    top:10px;
-    right:10px;
-
-    width:32px;
-    height:32px;
-
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.95);
-    color:#ff2e63;
-
-    font-size:18px;
-    font-weight:bold;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    cursor:pointer;
-    z-index:1000;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.25);
+  .close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #ff4d6d;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: 0.3s;
 }
 
-.close-btn:hover{
-    background:#ff2e63;
-    color:#fff;
+.close-btn:hover {
+  background: #ff4d6d;
+  color: white;
+  transform: scale(1.1);
 }
 </style>
 </head>
 
 <body>
+
     <audio id="bgMusic" autoplay loop>
         <source src="Taare - DjBaap.mp3" type="audio/mpeg">
     </audio>
@@ -147,9 +143,9 @@ body {
 <div class="right" id="right"></div>
 
 <div class="slider">
-    <button class="close-btn" onclick="window.location.href='surprise.html'">
-    ✕
-  </button>
+  <button class="close-btn" onclick="window.location.href='surprise.html'">
+  ✖
+</button>
   <div class="slides" id="slides">
     <img src="img1.jpg">
     <img src="img2.jpg">
