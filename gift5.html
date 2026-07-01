@@ -20,7 +20,6 @@ html,body{
 }
 
 .heart5{
-    position: relative;
     width:100%;
     min-height:100vh;
     background:
@@ -31,7 +30,7 @@ html,body{
     justify-content:center;
     align-items:center;
     padding:15px;
-    gap:12px;
+    gap: 12px; 
 }
 
 .img-box{
@@ -66,48 +65,38 @@ html,body{
     max-width: 95%;
     white-space: normal;
 }
-    body{
-    position: relative;
-}
-  .close-btn{
-    position:absolute;
-    top:15px;
-    right:15px;
-
-    width:32px;
-    height:32px;
-
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,0.9);
-    color:#ff4d6d;
-
-    font-size:18px;
-    font-weight:bold;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    cursor:pointer;
-    z-index:100;
-    transition:0.3s;
+    .close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #ff4d6d;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: 0.3s;
 }
 
-.close-btn:hover{
-    background:#ff4d6d;
-    color:#fff;
-    transform:scale(1.1);
+.close-btn:hover {
+  background: #ff4d6d;
+  color: white;
+  transform: scale(1.1);
 }
 </style>
 </head>
 
 <body>
+<button class="close-btn" onclick="window.location.href='surprise.html'">
+  ✖
+</button>
 <section class="heart5">
- <button class="close-btn"
-            onclick="window.location.href='surprise.html'">
-        ✕
-    </button>
+
     <div class="img-box">
         <img src="Flower_cake.png" alt="Top Image">
     </div>
