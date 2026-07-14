@@ -35,7 +35,6 @@ html,body{
 
 .img-box{
     width:min(90vw,500px);
-    
     max-height: 75vh;
     border:4px solid #000;
     border-radius:12px;
@@ -65,25 +64,35 @@ html,body{
     max-width: 95%;
     white-space: normal;
 }
-    .close-btn {
+
+/* button container */
+.nav-buttons {
   position: fixed;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.nav-btn {
   width: 45px;
   height: 45px;
   border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.9);
   color: #ff4d6d;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 9999;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.close-btn:hover {
+.nav-btn:hover {
   background: #ff4d6d;
   color: white;
   transform: scale(1.1);
@@ -92,9 +101,17 @@ html,body{
 </head>
 
 <body>
-<button class="close-btn" onclick="window.location.href='surprise.html'">
-  ✖
-</button>
+
+<!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <button class="nav-btn" onclick="window.location.href='surprise.html'" title="Close">
+    ✖
+  </button>
+  <button class="nav-btn" onclick="window.location.href='gift1.html'" title="Next">
+    ➡
+  </button>
+</div>
+
 <section class="heart5">
 
     <div class="img-box">
@@ -106,12 +123,11 @@ html,body{
     </div>
 
 </section>
+
 <script>
 window.addEventListener("load", () => {
-    // Smooth page fade-in
     document.body.classList.add("loaded");
 
-    // Smooth image loading
     document.querySelectorAll("img").forEach(img => {
         if (img.complete) {
             img.classList.add("loaded");
